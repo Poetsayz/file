@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'basic.css' %}">
+<head>
+    <script type='text/javascript'> 
+        let onclick_count= 0
+        function addFields(){
+            onclick_count+=1
+            // Generate a dynamic number of inputs
+            var number = document.getElementById("no_of_values").value;
+            var temp = number
+            // Get the element where the inputs will be added to
+            var container = document.getElementById("form");
+            // Remove every children it had bef ore
+      
+            if (onclick_count>1){
+                
+                const startingPoint = document.getElementById("start");
+                const endingPoint = document.getElementById("no_of_values"+onclick_count);
+                const last =document.getElementById("form")
+                console.log(last.lastElementChild)
+        
+                while (startingPoint.nextElementSibling &&
+                startingPoint.nextElementSibling !== endingPoint) {
+                    console.log(startingPoint.nextElementSibling)
+                   startingPoint.nextElementSibling.remove();
+                }}
+
+
+            for (i=0;i<number;i++){
+                // Append a node with a random text
+                
+                container.insertBefore(document.createElement("br"),container.lastChild);
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                // Create an <input> element, set its type and name attributes
+                var start =document.createElement("br");
+                start.id="start"
+                container.insertBefore(start,container.lastChild)
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                var text = document.createElement('label');
+                text.id="no_of_values " + (i+1)
+                text.innerHTML="no_of_values " + (i+1);
+                container.insertBefore(text,container.lastChild);
+
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+
+                label.id="lab_os_"+ i;
+                label.innerHTML = "OS";
+
+                container.insertBefore(label,container.lastChild);
+                input.type = "text";
+                input.name = "_OS_" + i;
+                input.id = "_OS_" + i;
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "98_percentile"; 
+                label.id="lab_98_percentile"
+                container.insertBefore(label,container.lastChild);
+                input.type = "text";
+                input.name = "_98_percentile" + i;
+                input.id = "_98_percentile" + i;
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "Avg_"; 
+                label.id="lab_Avg_"
+                container.insertBefore(label,container.lastChild);
+                input.type = "text";
+                input.name = "_Avg_" + i;
+                input.id = "_Avg_" + i;
+
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "VD_bench_"; 
+                label.id="lab_VD_bench_"
+                container.insertBefore(label,container.lastChild);
+                input.type = "img";
+                input.name = "_VD_bench_" + i;
+                input.id = "_VD_bench_" + i;
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "fio_graph_"; 
+                label.id="lab_fio_graph_"
+                container.insertBefore(label,container.lastChild);
+                input.type = "img";
+                input.name = "_fio_graph_" + i;
+                input.id = "_fio_graph_" + i;
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+                
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "total_vols_"; 
+                label.id="lab_total_vols_"
+                container.insertBefore(label,container.lastChild);
+                input.type = "text";
+                input.name = "_total_vols_" + i;
+                input.id = "_total_vols_" + i;
+                container.insertBefore(input,container.lastChild);
+
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "total_lun_maps_"; 
+                label.id="lab_total_lun_maps_"
+                container.insertBefore(label,container.lastChild);
+                input.type = "text";
+                input.name = "_total_lun_maps_" + i;
+                input.id = "_total_lun_maps_" + i;
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "Dt_io_luns_"; 
+                label.id="lab_Dt_io_luns_"
+                container.insertBefore(label,container.lastChild);
+                input.type = "text";
+                input.name = "_Dt_io_luns_" + i;
+                input.id = "_Dt_io_luns_" + i;
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "Dt_io_mountpts_"; 
+                label.id="lab_Dt_io_mountpts_"
+                container.insertBefore(label,container.lastChild);
+                input.type = "text";
+                input.name = "_Dt_io_mountpts_" + i;
+                input.id = "_Dt_io_mountpts_" + i;
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+                container.insertBefore(document.createElement("br"),container.lastChild);
+
+                var input = document.createElement("input");
+                var label = document.createElement('label');
+                label.innerHTML = "VD_bench_luns_"; 
+                label.id="lab_VD_bench_luns_"
+                container.insertBefore(label,container.lastChild);
+                input.type = "text";
+                input.name = "_VD_bench_luns_" + i;
+                input.id = "_VD_bench_luns_" + i+"_";
+                container.insertBefore(input,container.lastChild);
+                // Append a line break 
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+
+<h2>HTML Forms</h2>
+<div>
+
+<form action="/action_page.php" id="form" method="post">
+  <label for="Ontap_release">First name:    </label>
+  <input type="text" id="Ontap_release" name="Ontap_release"><br>
+  <label for="Ontap_version">Last name:     </label>
+  <input type="text" id="Ontap_version" name="Ontap_version" ><br><br>
+  <label for="Protocol">First name:     </label>
+  <input type="text" id="Protocol" name="Protocol" ><br>
+  <label for="Persona">Last name:       </label>
+  <input type="text" id="Persona" name="Persona" ><br><br>
+  <label for="Date">First name:     </label>
+  <input type="date" id="Persona" name="Persona" ><br>
+  <label for="SFO">Last name:       </label>
+  <input type="text" id="SFO" name="SFO" ><br><br>
+  <label for="Nate_log_dir">First name:     </label>
+  <input type="text" id="Nate_log_dir" name="Nate_log_dir"><br>
+  <label for="Vol_share_dir">Last name:     </label>
+  <input type="text" id="Vol_share_dir" name="Vol_share_dir"><br><br>
+  <label for="Features">First name:     </label>
+  <input type="text" id="Features" name="Features" ><br>
+  <label for="avg_cpu_util">Last name:      </label>
+  <input type="text" id="avg_cpu_util" name="avg_cpu_util" ><br><br>
+  <label for="dashboard_disp">First name:       </label>
+  <input type="text" id="dashboard_disp" name="dashboard_disp"><br>
+  <label for="PTT_type">PTT Type:       </label>
+  <input type="text" id="PTT_type" name="PTT_type"><br><br>
+  <label for="no_of_values"> Number of Values:      </label>
+  <input type="text" id="no_of_values" name="no_of_values"><br />
+  <a href="#" id="filldetails" name='filldetails'onclick="addFields()">Fill Details</a>
+  <input type="submit" name = 'submit' value="Submit">
+
+</form>
+</div>
+
+
+</body>
+</html>
+
