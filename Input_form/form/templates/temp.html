@@ -1,0 +1,46 @@
+var menu = document.querySelectorAll('input');
+for (var i = 0; menu[i]; i++) {
+    if (menu[i].id.startsWith('_'))
+    {
+
+        var rem = document.getElementById(menu[i].id);
+        rem.parentNode.removeChild(rem);
+   }
+}
+
+var menu = document.querySelectorAll('label');
+for (var i = 0; menu[i]; i++) {
+    if (menu[i].id.startsWith('lab'))
+    {
+
+        var rem = document.getElementById(menu[i].id);
+        rem.parentNode.removeChild(rem);
+   }
+}
+
+
+if (onclick_count>1){
+    const startingPoint = document.getElementById("submit");
+    const endingPoint = document.getElementById("_VD_bench_luns_");
+    while (startingPoint.nextElementSibling &&
+    startingPoint.nextElementSibling !== endingPoint) {
+        console.log(startingPoint.nextElementSibling)
+       startingPoint.nextElementSibling.remove();
+    }}
+
+    container.insertBefore(document.createTextNode("no_of_values " + (i+1)),container.lastChild);
+
+
+    if (onclick_count>1){
+                
+        const startingPoint = document.getElementById("start");
+        const endingPoint = document.getElementById("lab_os"+onclick_count);
+        const last =document.getElementById("form")
+        console.log(last.lastElementChild)
+
+        while (startingPoint.nextElementSibling &&
+        startingPoint.nextElementSibling !== endingPoint) {
+            console.log(startingPoint.nextElementSibling)
+
+           startingPoint.nextElementSibling.remove();
+        }}
